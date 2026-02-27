@@ -1,0 +1,46 @@
+
+
+#btnAgregarUsuario {
+    
+}
+
+.tarjeta-usuario {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 239, 239);
+    border-bottom: 1px;
+    gap: 10px;
+
+}
+
+.usuario-principales {
+    display: flex;
+    font-weight: 700;
+    gap: 30px;
+    border-bottom: 1px;
+    border-style: solid;
+}
+
+.usuario-adicionales {
+    display: flex;
+    gap: 30px;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+estilos productos //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+#contenedorProductos{
+    
+}
+
+#tabla {
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+    margin-top: 30px;
+}
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid;
+    border-color: black;
+
+}
