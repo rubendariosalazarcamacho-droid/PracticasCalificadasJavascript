@@ -233,3 +233,73 @@ btnAgregarTarea.addEventListener("click", ()=>{
         alert("No hay mas tareas para agregar")
     }
 })
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Ejercicio 4 — Tabla de Estudiantes
+// Crea una función mostrarEstudiantes(...estudiantes) que reciba varios objetos estudiantes.
+// Cada estudiante tiene { nombre, edad, notas }.
+// Desestructura para calcular el promedio de notas y genera dinámicamente una tabla en el DOM.
+// Usa spread para agregar estudiantes sin mutar el array original.
+// Bonus: agrega un botón que actualice la edad o las notas de un estudiante y vuelva a renderizar la tabla. 
+const estudiantes = [
+  { 
+    nombre: "Ana Martínez", 
+    edad: 20, 
+    notas: [15, 18, 20] 
+  },
+  { 
+    nombre: "Luis Pérez", 
+    edad: 22, 
+    notas: [10, 12, 14] 
+  },
+  { 
+    nombre: "Sofía Castro", 
+    edad: 19, 
+    notas: [18, 19, 17] 
+  },
+  { 
+    nombre: "Carlos Ruiz", 
+    edad: 21, 
+    notas: [11, 13, 10] 
+  },
+  { 
+    nombre: "Elena Gómez", 
+    edad: 23, 
+    notas: [20, 15, 19] 
+  }
+]
+
+ const tabla = document.querySelector("#filasEstudiantes")
+ const btnCargar = document.querySelector("#btnCargarEstudiantes")
+
+function mostrarEstudiantes(...lista) {
+    
+    tabla.innerHTML = ""
+    
+    lista.forEach(({ nombre, edad, notas }) => {
+        
+        const [nota1, nota2, nota3] = notas;
+        const promedio = (nota1 + nota2 + nota3) / 3;
+
+        tabla.innerHTML += `
+            <tr>
+                <td>${nombre}</td>
+                <td>${edad}</td>
+                <td>${promedio.toFixed(2)}</td>
+            </tr>
+        `
+    })
+}
+
+btnCargar.addEventListener("click", () =>{
+     mostrarEstudiantes(...estudiantesActualizados)
+})
+
+const nuevoEstudiante = { 
+    nombre: "Pedro Picapiedra", 
+    edad: 35, 
+    notas: [10, 10, 10] 
+};
+
+const estudiantesActualizados = [...estudiantes, nuevoEstudiante];
